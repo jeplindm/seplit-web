@@ -1,10 +1,16 @@
+import { useEffect, useState } from 'react'
+
+import GroupSettings from '@/components/group/group-settings'
 import { Button } from '@/components/ui/button'
 import { Share2 } from 'lucide-react'
+
+import { Group, LocalDB, Member } from '@/lib/storage'
 
 export default function GroupHeader() {
   return (
     <header className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-slate-200 px-4 h-16 flex items-center justify-between">
-      <h1 className="font-bold text-lg text-slate-800">Bali Trip 2024</h1>
+      <GroupSettings />
+      {/* <h1 className="font-bold text-lg text-slate-800">Bali Trip 2024</h1> */}
 
       <Button
         variant="ghost"

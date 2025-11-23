@@ -15,6 +15,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { ArrowLeftCircle, Loader2 } from 'lucide-react'
+import { LocalDB } from '@/lib/storage'
 
 const generateGroupId = (name: string) => {
   const slug = name.toLowerCase().replace(/\s+/g, '-').slice(0, 15)
@@ -48,19 +49,20 @@ export default function CreateClient() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-
     if (!group.trim()) return
 
     setIsLoading(true)
 
-    const newGroupId = generateGroupId(group)
+    let currentUser = LocalDB.getUser()
+    if (!currentUser) {
+      currentUser = LocalDB.initSession(name)
+    }
 
-    const guestUser = { id: crypto.randomUUID(), name, isGuest: true }
-    localStorage.setItem('seplit_current_user', JSON.stringify(guestUser))
+    const newGroupId = LocalDB.createGroup(group, currentUser)
 
     await new Promise((resolve) => setTimeout(resolve, 800))
 
-    router.push(`/group/${newGroupId}`)
+    router.push(`/groups/${newGroupId}`)
   }
 
   return (
