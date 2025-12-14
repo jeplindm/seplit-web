@@ -1,6 +1,7 @@
 'use client'
 
-import { motion, Variants } from 'framer-motion'
+import { useRouter } from 'next/navigation'
+import { motion } from 'framer-motion'
 import { ArrowRight, MessageCircle, Sparkles } from 'lucide-react'
 import {
   staggerContainer,
@@ -9,6 +10,8 @@ import {
 } from '@/utils/animateVariants'
 
 export default function Hero() {
+  const router = useRouter()
+
   return (
     <section className="mx-auto grid max-w-7xl items-center gap-16 px-6 pt-32 pb-20 md:pt-48 md:pb-32 lg:grid-cols-2">
       <motion.div
@@ -45,6 +48,7 @@ export default function Hero() {
           className="flex flex-col items-center justify-center gap-4 pt-4 sm:flex-row lg:justify-start"
         >
           <motion.button
+            onClick={() => router.push('/onboarding')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="flex items-center gap-3 rounded-full bg-purple-600 px-8 py-4 text-lg font-bold text-white shadow-xl shadow-purple-500/30 transition-colors hover:cursor-pointer hover:bg-purple-700"
