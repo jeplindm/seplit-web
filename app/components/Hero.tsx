@@ -2,36 +2,11 @@
 
 import { motion, Variants } from 'framer-motion'
 import { ArrowRight, MessageCircle, Sparkles } from 'lucide-react'
-
-// -- Animation Variants --
-const staggerContainer: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-}
-
-const fadeInUp: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' }
-  }
-}
-
-const floatAnimation = {
-  y: [0, -15, 0],
-  rotate: [0, 1, -1, 0],
-  transition: {
-    duration: 6,
-    repeat: Infinity,
-    ease: 'easeInOut'
-  }
-}
+import {
+  staggerContainer,
+  fadeInUp,
+  floatAnimation
+} from '@/utils/animateVariants'
 
 export default function Hero() {
   return (
@@ -72,14 +47,14 @@ export default function Hero() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-3 rounded-full bg-purple-600 px-8 py-4 text-lg font-bold text-white shadow-xl shadow-purple-500/30 transition-colors hover:bg-purple-700"
+            className="flex items-center gap-3 rounded-full bg-purple-600 px-8 py-4 text-lg font-bold text-white shadow-xl shadow-purple-500/30 transition-colors hover:cursor-pointer hover:bg-purple-700"
           >
             Start Splitting - Free
             <ArrowRight className="h-5 w-5" />
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="rounded-full px-8 py-4 font-bold text-slate-600 transition-all hover:bg-purple-50 hover:text-purple-600"
+            className="rounded-full px-8 py-4 font-bold text-slate-600 transition-all hover:cursor-pointer hover:bg-purple-50 hover:text-purple-600"
           >
             View Demo
           </motion.button>

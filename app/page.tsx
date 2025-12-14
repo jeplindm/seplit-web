@@ -3,6 +3,7 @@ import Footer from '@/components/landing/footer'
 import Header from './components/Header'
 import BackgroundOrbs from './components/BackgroundOrbs'
 import Hero from './components/Hero'
+import HowItWorks from './components/HowItWorks'
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <BackgroundOrbs />
       <Header />
       <Hero />
+      <HowItWorks />
     </main>
   )
 }
