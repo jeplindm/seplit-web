@@ -1,9 +1,8 @@
-import FeaturesGrid from '@/components/landing/features-grid'
-import Footer from '@/components/landing/footer'
 import Header from './components/Header'
 import BackgroundOrbs from './components/BackgroundOrbs'
 import Hero from './components/Hero'
 import HowItWorks from './components/HowItWorks'
+import Feature from './components/Feature'
 
 export default function Home() {
   return (
@@ -12,6 +11,7 @@ export default function Home() {
       <Header />
       <Hero />
       <HowItWorks />
+      <Feature />
     </main>
   )
 }
