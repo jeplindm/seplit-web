@@ -3,6 +3,9 @@ import BackgroundOrbs from './components/BackgroundOrbs'
 import Hero from './components/Hero'
 import HowItWorks from './components/HowItWorks'
 import Feature from './components/Feature'
+import Payment from './components/Payment'
+import SocialProof from './components/SocialProof'
+import Footer from './components/Footer'
 
 export default function Home() {
   return (
@@ -12,6 +15,9 @@ export default function Home() {
       <Hero />
       <HowItWorks />
       <Feature />
+      <Payment />
+      <SocialProof />
+      <Footer />
     </main>
   )
 }
